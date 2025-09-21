@@ -2,40 +2,35 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <title>Site perso - Corentin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corentin Vernet - Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Bienvenue sur mon site 🚀</h1>
-    <p>Ceci est mon site lié à LinkedIn, hébergé sur Vercel.</p>
+    <header>
+      <h1>Corentin Vernet</h1>
+      <p>Étudiant en informatique</p>
+      <nav>
+        <a href="https://github.com/CorentinVernet">Projets</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
 
-    <h2>Formulaire de contact</h2>
-    <form id="contactForm">
-      <input type="text" placeholder="Nom" id="name" required /><br />
-      <input type="email" placeholder="Email" id="email" required /><br />
-      <textarea placeholder="Message" id="message" required></textarea><br />
-      <button type="submit">Envoyer</button>
-    </form>
+    <section id="projects">
+      <h2>Mes Projets</h2>
+      <div class="card">
+        <h3>Arduino arrosage solaire</h3>
+        <p>Système IoT pour arroser automatiquement avec énergie solaire.</p>
+        <a href="https://github.com/CorentinVernet" target="_blank"
+          >Voir le code</a
+        >
+      </div>
+    </section>
 
-    <script>
-      document
-        .getElementById("contactForm")
-        .addEventListener("submit", async (e) => {
-          e.preventDefault();
-          const res = await fetch(
-            "https://cvernet-server.onrender.com/contact",
-            {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                name: document.getElementById("name").value,
-                email: document.getElementById("email").value,
-                message: document.getElementById("message").value,
-              }),
-            }
-          );
-          const data = await res.json();
-          alert(data.message);
-        });
-    </script>
+    <footer>
+      <p>&copy; 2025 - Corentin Vernet</p>
+    </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
