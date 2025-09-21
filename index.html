@@ -5,30 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Corentin Vernet - Portfolio</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header>
-      <h1>Corentin Vernet</h1>
-      <p>Étudiant en informatique</p>
-      <nav>
-        <a href="https://github.com/CorentinVernet">Projets</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+    <!-- Header / Navigation -->
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Corentin Vernet</h1>
+        <p>Étudiant en informatique</p>
+        <nav class="nav">
+          <a href="#about">À propos</a>
+          <a href="#skills">Compétences</a>
+          <a href="#projects">Projets</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
     </header>
 
-    <section id="projects">
-      <h2>Mes Projets</h2>
-      <div class="card">
-        <h3>Arduino arrosage solaire</h3>
-        <p>Système IoT pour arroser automatiquement avec énergie solaire.</p>
-        <a href="https://github.com/CorentinVernet" target="_blank"
-          >Voir le code</a
-        >
+    <!-- À propos -->
+    <section id="about">
+      <h2>À propos de moi</h2>
+      <p>
+        Étudiant passionné par l’informatique, le développement web et la
+        cybersécurité. Je suis toujours à la recherche de nouveaux défis et
+        opportunités pour apprendre et grandir dans le domaine technologique.
+      </p>
+    </section>
+
+    <!-- Compétences -->
+    <section id="skills">
+      <h2>Compétences</h2>
+      <div class="skills-grid">
+        <div class="skill">HTML / CSS / JS</div>
+        <div class="skill">Arduino / IoT</div>
+        <div class="skill">Python / Bash</div>
       </div>
     </section>
 
+    <!-- Projets -->
+    <section id="projects">
+      <h2>Mes Projets</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Station Météo</h3>
+          <p>Station Météo pour avoir des données météorologique locales.</p>
+          <a
+            href="https://github.com/CorentinVernet/weather_station_project"
+            target="_blank"
+            class="btn-small"
+            >Voir le code</a
+          >
+        </div>
+        <!-- Ajouter d'autres projets ici -->
+      </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
       <p>&copy; 2025 - Corentin Vernet</p>
+      <p>
+        <a href="https://github.com/CorentinVernet" target="_blank">GitHub</a> |
+        <a
+          href="https://www.linkedin.com/in/corentin-vernet-b786b7385/"
+          target="_blank"
+          >LinkedIn</a
+        >
+      </p>
     </footer>
 
     <script src="script.js"></script>
