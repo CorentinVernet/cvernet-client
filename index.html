@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Site perso - Corentin</title>
+  </head>
+  <body>
+    <h1>Bienvenue sur mon site 🚀</h1>
+    <p>Ceci est mon site lié à LinkedIn, hébergé sur Vercel.</p>
+
+    <h2>Formulaire de contact</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Nom" id="name" required /><br />
+      <input type="email" placeholder="Email" id="email" required /><br />
+      <textarea placeholder="Message" id="message" required></textarea><br />
+      <button type="submit">Envoyer</button>
+    </form>
+
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const res = await fetch(
+            "https://cvernet-server.onrender.com/contact",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                message: document.getElementById("message").value,
+              }),
+            }
+          );
+          const data = await res.json();
+          alert(data.message);
+        });
+    </script>
+  </body>
+</html>
