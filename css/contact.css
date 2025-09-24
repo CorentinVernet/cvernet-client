@@ -16,6 +16,70 @@ form textarea {
   box-sizing: border-box; /* important pour que padding ne dépasse pas la largeur */
 }
 
+#fileRemoveBtn {
+  display: inline-block;
+  padding: 0.8rem 1.2rem;
+  background-color: #ff4d4d;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+
+  transition: all 0.4s ease;
+  text-align: center;
+  width: auto; /* différent de la largeur du bouton envoyer */
+  margin-left: 1rem;
+}
+
+#fileRemoveBtn:hover {
+  background-color: #ff1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.send-btn:hover {
+  background-color: #6b73ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Input file custom */
+input[type="file"] {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f4f4f9;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+input[type="file"]:hover {
+  border-color: #000dff;
+  background-color: #e0e4ff;
+}
+
+.custom-file {
+  display: inline-block;
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f4f4f9;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s;
+}
+.custom-file:hover {
+  border-color: #000dff;
+  background-color: #e0e4ff;
+}
+.custom-file span {
+  pointer-events: none;
+}
+
 form textarea {
   resize: vertical; /* l'utilisateur peut redimensionner seulement en hauteur */
   min-height: 150px; /* taille minimale */
@@ -42,6 +106,33 @@ form button {
 form button:hover {
   background: #6b73ff; /* couleur au survol */
   transform: translateY(-2px); /* petit effet de “lift” */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.file-upload {
+  display: flex;
   align-items: center;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+.file-upload input[type="file"] {
+  display: none;
+}
+
+.file-upload label {
+  padding: 0.8rem 1rem;
+  background-color: #000dff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.file-upload label:hover {
+  background-color: #6b73ff;
+}
+
+.file-upload .file-name {
+  font-size: 0.9rem;
+  color: #555;
 }

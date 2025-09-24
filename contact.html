@@ -35,7 +35,7 @@
         <a href="index.html">À propos</a>
         <a href="index.html#skills">Compétences</a>
         <a href="index.html#projects">Projets</a>
-        <a href="index.htmlcontact.html">Contact</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </header>
 
@@ -49,7 +49,17 @@
           placeholder="Votre message"
           required
         ></textarea>
-        <input type="file" name="attachments" multiple />
+        <!--<input type="file" name="attachments" multiple />-->
+
+        <div class="file-upload">
+          <input type="file" name="attachments" id="fileInput" />
+          <label for="fileInput">Choisir un fichier</label>
+          <span class="file-name">Aucun fichier choisi</span>
+          <button type="button" id="fileRemoveBtn" style="display: none">
+            ×
+          </button>
+        </div>
+
         <button type="submit">Envoyer</button>
       </form>
 
