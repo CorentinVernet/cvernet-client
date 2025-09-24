@@ -4,7 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact - Corentin Vernet</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+    <link rel="stylesheet" href="css/buttons.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-CHWPF6KZ3P"
@@ -35,7 +41,7 @@
 
     <section id="contact">
       <p>Remplissez ce formulaire :</p>
-      <form id="contactForm">
+      <form id="contactForm" enctype="multipart/form-data">
         <input type="text" name="name" placeholder="Nom" required />
         <input type="email" name="email" placeholder="Email" required />
         <textarea
@@ -43,16 +49,24 @@
           placeholder="Votre message"
           required
         ></textarea>
+        <input type="file" name="attachments" multiple />
         <button type="submit">Envoyer</button>
       </form>
+
       <p id="response"></p>
     </section>
 
     <footer>
       <p>&copy; 2025 - Corentin Vernet</p>
+      <p>
+        <a href="https://github.com/CorentinVernet" target="_blank">GitHub</a> |
+        <a href="https://www.linkedin.com/in/corentin-vernet" target="_blank"
+          >LinkedIn</a
+        >
+      </p>
     </footer>
 
-    <script src="menu.js"></script>
-    <script src="contact.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/contact.js"></script>
   </body>
 </html>

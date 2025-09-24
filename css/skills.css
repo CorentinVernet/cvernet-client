@@ -1,0 +1,18 @@
+/* Skills (pour index.html) */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  text-align: center;
+}
+.skill {
+  background: #000dff;
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.skill:hover {
+  background: #6b73ff;
+}

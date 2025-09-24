@@ -1,0 +1,71 @@
+/* Header / Hero */
+header,
+.hero {
+  text-align: center;
+  padding: 2rem;
+  background: #222;
+  color: white;
+}
+.hero {
+  background: linear-gradient(135deg, #6b73ff 0%, #000dff 100%);
+  position: relative;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Burger en haut à droite */
+.burger {
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  transition: transform 0.3s ease;
+}
+.burger.active {
+  transform: rotate(90deg);
+}
+
+/* Menu nav */
+.nav {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background: #000000c9;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.nav.show {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Liens du menu */
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0.5rem 0;
+  font-weight: 600;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.nav a:hover {
+  transform: scale(1.1);
+  text-decoration: underline;
+}

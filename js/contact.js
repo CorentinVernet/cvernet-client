@@ -1,22 +1,18 @@
 document.getElementById("contactForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const formData = {
-    name: e.target.name.value,
-    email: e.target.email.value,
-    message: e.target.message.value,
-  };
+  const form = e.target;
+  const formData = new FormData(form); // FormData pour PJ
 
   try {
     const res = await fetch("https://cvernet-server.onrender.com/contact", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
+      body: formData,
     });
 
     const data = await res.json();
     document.getElementById("response").textContent = data.message;
-    e.target.reset();
+    form.reset();
   } catch (err) {
     document.getElementById("response").textContent = "Erreur de connexion ❌";
   }

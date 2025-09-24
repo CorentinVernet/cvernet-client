@@ -1,0 +1,47 @@
+/* Conteneur du formulaire pour centrage */
+#contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centre horizontalement les éléments */
+}
+
+/* Contact form (pour contact.html) */
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box; /* important pour que padding ne dépasse pas la largeur */
+}
+
+form textarea {
+  resize: vertical; /* l'utilisateur peut redimensionner seulement en hauteur */
+  min-height: 150px; /* taille minimale */
+}
+
+/* Bouton Envoyer du formulaire contact */
+form button {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  background: #000dff; /* couleur de fond */
+  color: white; /* texte blanc */
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px; /* coins arrondis */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 100%; /* prend toute la largeur du formulaire */
+  max-width: 200px; /* mais pas trop large */
+  margin-top: 1rem;
+}
+
+form button:hover {
+  background: #6b73ff; /* couleur au survol */
+  transform: translateY(-2px); /* petit effet de “lift” */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  align-items: center;
+}

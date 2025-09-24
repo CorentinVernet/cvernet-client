@@ -1,0 +1,22 @@
+/* Buttons */
+.btn-small,
+form button,
+.btn {
+  display: inline-block;
+  padding: 1rem;
+  background: #000dff;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: 600;
+  margin-top: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+  text-align: center;
+}
+.btn-small:hover,
+form button:hover,
+.btn:hover {
+  background: #6b73ff;
+}

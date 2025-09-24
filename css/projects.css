@@ -1,0 +1,78 @@
+/* Projects Section */
+#projects {
+  padding: 4rem 2rem;
+}
+
+#projects h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.2rem;
+  color: #000dff;
+}
+
+/* Container des cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+/* Style des cards */
+.card {
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #e0e4ff
+  ); /* fond stylé dégradé */
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+}
+
+.card h3 {
+  margin-bottom: 1rem;
+  color: #000dff;
+}
+
+.card p {
+  margin-bottom: 1.5rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Bouton dans les cards */
+.card .btn-small {
+  background: #000dff;
+  color: #fff;
+  border-radius: 12px;
+  padding: 0.8rem 1.2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.card .btn-small:hover {
+  background: #6b73ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover sur la card */
+.card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  #projects h2 {
+    font-size: 1.8rem;
+  }
+}
