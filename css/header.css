@@ -1,3 +1,38 @@
+/* Fix scroll horizontal et largeur globale */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* empêche tout débordement horizontal */
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Pour toutes les sections, pas de largeur dépassant l'écran */
+section {
+  max-width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Pour header / hero */
+header,
+.hero {
+  max-width: 100%;
+}
+
+/* Eviter les éléments grid / flex de dépasser */
+.cards,
+.skills-grid {
+  max-width: 100%;
+}
+
 /* Header / Hero */
 header,
 .hero {
@@ -20,18 +55,38 @@ header,
 }
 
 /* Burger en haut à droite */
+/* Transforme le burger en 3 barres */
 .burger {
-  font-size: 2rem;
-  cursor: pointer;
-  user-select: none;
   position: absolute;
   top: 20px;
   right: 20px;
+  width: 30px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
   z-index: 1001;
-  transition: transform 0.3s ease;
 }
-.burger.active {
-  transform: rotate(90deg);
+
+.burger span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.4s ease; /* plus smooth */
+}
+
+/* animation quand burger actif */
+.burger.active span:nth-child(1) {
+  opacity: 0.5; /* barre du milieu disparaît */
+}
+.burger.active span:nth-child(2) {
+  opacity: 0.5; /* barre du milieu disparaît */
+}
+.burger.active span:nth-child(3) {
+  opacity: 0.5; /* barre du milieu disparaît */
 }
 
 /* Menu nav */
