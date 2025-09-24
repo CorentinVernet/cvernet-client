@@ -25,7 +25,14 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const form = e.target;
-  const formData = new FormData(form); // Permet les PJ
+  const formData = new FormData(form); // PJ inclus
+  const submitBtn = form.querySelector("button[type='submit']");
+  const responseEl = document.getElementById("response");
+
+  // Bloque le bouton et change le texte pendant l'envoi
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Envoi…";
+  responseEl.textContent = "";
 
   try {
     const res = await fetch("https://cvernet-server.onrender.com/contact", {
@@ -34,10 +41,34 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
     });
 
     const data = await res.json();
-    document.getElementById("response").textContent = data.message;
-    form.reset();
-    document.querySelector(".file-name").textContent = "Aucun fichier choisi"; // reset affichage fichier
+
+    if (data.success) {
+      submitBtn.textContent = "Message envoyé";
+      responseEl.style.color = "green";
+      form.reset();
+
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Envoyer";
+      }, 3000);
+    } else {
+      // Cas erreur côté serveur
+      submitBtn.textContent = "Erreur ❌";
+      responseEl.style.color = "red";
+
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Envoyer";
+      }, 3000);
+    }
   } catch (err) {
-    document.getElementById("response").textContent = "Erreur de connexion ❌";
+    // Cas erreur côté client / réseau
+    submitBtn.textContent = "Erreur ❌";
+    responseEl.style.color = "red";
+
+    setTimeout(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Envoyer";
+    }, 3000);
   }
 });
