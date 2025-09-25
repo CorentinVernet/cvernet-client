@@ -63,9 +63,8 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
     const data = await res.json();
 
     if (data.success) {
-      submitBtn.textContent = "Message envoyé ✅";
+      submitBtn.textContent = "Message envoyé";
       responseEl.style.color = "green";
-      responseEl.textContent = "Votre message a bien été envoyé !";
       form.reset();
 
       setTimeout(() => {
@@ -76,7 +75,6 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
     } else {
       submitBtn.textContent = "Erreur ❌";
       responseEl.style.color = "red";
-      responseEl.textContent = "Une erreur est survenue.";
 
       setTimeout(() => {
         submitBtn.disabled = false;
@@ -87,7 +85,6 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
   } catch (err) {
     submitBtn.textContent = "Erreur réseau ❌";
     responseEl.style.color = "red";
-    responseEl.textContent = "Impossible de contacter le serveur.";
 
     setTimeout(() => {
       submitBtn.disabled = false;
