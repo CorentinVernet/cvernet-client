@@ -29,6 +29,26 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
   const submitBtn = form.querySelector("button[type='submit']");
   const responseEl = document.getElementById("response");
 
+  const emailInput = form.querySelector('input[name="email"]');
+  const email = emailInput.value.trim();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  // ✅ Vérification email avant envoi
+  if (!emailRegex.test(email)) {
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Email invalide ❌";
+    responseEl.style.color = "red";
+    responseEl.textContent = "Merci d’entrer une adresse email valide.";
+
+    setTimeout(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Envoyer";
+      responseEl.textContent = "";
+    }, 3000);
+
+    return;
+  }
+
   // Bloque le bouton et change le texte pendant l'envoi
   submitBtn.disabled = true;
   submitBtn.textContent = "Envoi…";
@@ -43,32 +63,36 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
     const data = await res.json();
 
     if (data.success) {
-      submitBtn.textContent = "Message envoyé";
+      submitBtn.textContent = "Message envoyé ✅";
       responseEl.style.color = "green";
+      responseEl.textContent = "Votre message a bien été envoyé !";
       form.reset();
 
       setTimeout(() => {
         submitBtn.disabled = false;
         submitBtn.textContent = "Envoyer";
+        responseEl.textContent = "";
       }, 3000);
     } else {
-      // Cas erreur côté serveur
       submitBtn.textContent = "Erreur ❌";
       responseEl.style.color = "red";
+      responseEl.textContent = "Une erreur est survenue.";
 
       setTimeout(() => {
         submitBtn.disabled = false;
         submitBtn.textContent = "Envoyer";
+        responseEl.textContent = "";
       }, 3000);
     }
   } catch (err) {
-    // Cas erreur côté client / réseau
-    submitBtn.textContent = "Erreur ❌";
+    submitBtn.textContent = "Erreur réseau ❌";
     responseEl.style.color = "red";
+    responseEl.textContent = "Impossible de contacter le serveur.";
 
     setTimeout(() => {
       submitBtn.disabled = false;
       submitBtn.textContent = "Envoyer";
+      responseEl.textContent = "";
     }, 3000);
   }
 });
