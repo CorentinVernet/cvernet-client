@@ -19,12 +19,12 @@
 }
 
 /* Style des cards */
+/* Cards */
 .card {
-  background: linear-gradient(
-    135deg,
-    #ffffff,
-    #e0e4ff
-  ); /* fond stylé dégradé */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pousse le contenu en haut et le bouton en bas */
+  background: linear-gradient(135deg, #ffffff, #e0e4ff);
   padding: 2rem;
   border-radius: 16px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
